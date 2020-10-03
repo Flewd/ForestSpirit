@@ -9,7 +9,7 @@ public class PlayerJumpController : MonoBehaviour
     private Rigidbody _rigidbody;
     
     private float distToGround = 0f;
-    private float jumpSpeed = 9;
+    [SerializeField] private float jumpSpeed = 9;
     
     private string _ANIMATION_VAR_VELOCITY_Y = "velocityY";
     private string _ANIMATION_TRIGGER_JUMP = "jump";

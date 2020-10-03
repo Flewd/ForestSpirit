@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 259623258731885733}
   - component: {fileID: 259623258731885735}
   - component: {fileID: 259623258731885737}
-  - component: {fileID: 259623258731885736}
   - component: {fileID: 259623258731885732}
   - component: {fileID: 259623258731885739}
   - component: {fileID: 259623258731885734}
@@ -200,20 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 259623258731885738}
   _animationController: {fileID: 200751518670348202}
---- !u!114 &259623258731885736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 259623258731885730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: babec935fca5de2449ae3b4330ff7b9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spellPrefab: {fileID: 5067750392457006443, guid: 59bee8c6bfb0ff7409e66e02cbd9a925,
-    type: 3}
+  jumpSpeed: 12
 --- !u!114 &259623258731885732
 MonoBehaviour:
   m_ObjectHideFlags: 0
