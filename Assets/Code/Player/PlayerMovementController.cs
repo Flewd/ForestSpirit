@@ -32,10 +32,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (_currentMovementInput != Vector2.zero)
         {
+
             _playerDirection = new Vector3(_currentMovementInput.x, 0, _currentMovementInput.y);
-
-            float moveSpeedWithInputLimiter = _moveSpeed * _currentMovementInput.magnitude;
-
+            
             if (_currentMovementInput.x != 0 && _currentMovementInput.y != 0) // Check for diagonal movement
             {
                 // limit movement speed diagonally, so you move at 70% speed
@@ -43,13 +42,15 @@ public class PlayerMovementController : MonoBehaviour
                 _playerDirection.z *= diagonalMoveLimiter;
             }
 
-            Vector3 camRelativeDirection = _camTransform.TransformDirection(new Vector3(_playerDirection.x, 0, _playerDirection.z));
             camRelativeDirection.y = 0;
 
-            _rigidbody.velocity = new Vector3((_moveSpeed) * camRelativeDirection.x, _rigidbody.velocity.y,(_moveSpeed) * camRelativeDirection.z);
+            _rigidbody.velocity = new Vector3(
+                (_moveSpeed) * camRelativeDirection.x, 
+                _rigidbody.velocity.y,  
+                (_moveSpeed) * camRelativeDirection.z);
 
             HandleRotation();
-            _animationController.SetFloat(_ANIMATION_VAR_VELOCITY, Mathf.Clamp(_rigidbody.velocity.magnitude, 0.4f, moveSpeedWithInputLimiter));
+            _animationController.SetFloat(_ANIMATION_VAR_VELOCITY, Mathf.Clamp(_rigidbody.velocity.magnitude, 0.4f, _moveSpeed));
         }
         else
         {
