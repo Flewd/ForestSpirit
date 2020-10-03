@@ -32,7 +32,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (_currentMovementInput != Vector2.zero)
         {
-
             _playerDirection = new Vector3(_currentMovementInput.x, 0, _currentMovementInput.y);
             
             if (_currentMovementInput.x != 0 && _currentMovementInput.y != 0) // Check for diagonal movement
@@ -42,6 +41,7 @@ public class PlayerMovementController : MonoBehaviour
                 _playerDirection.z *= diagonalMoveLimiter;
             }
 
+            Vector3 camRelativeDirection = _camTransform.TransformDirection(new Vector3(_playerDirection.x, _playerDirection.y, _playerDirection.z));
             camRelativeDirection.y = 0;
 
             _rigidbody.velocity = new Vector3(
