@@ -16,7 +16,9 @@ public class PlayerMovementController : MonoBehaviour
 
     private string _ANIMATION_VAR_VELOCITY = "velocity";
     private const float diagonalMoveLimiter = 0.70f;
-    
+
+    private bool firstMove = true;
+
     void Start()
     {
         PlayerCheckpoint.LastRegisteredCheckpointPosition = transform.position;
@@ -34,6 +36,12 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (_currentMovementInput != Vector2.zero)
         {
+            if (firstMove)
+            {
+                firstMove = false;
+                TitleUiController.Instance.StartFadeOut();
+            }
+
             _playerDirection = new Vector3(_currentMovementInput.x, 0, _currentMovementInput.y);
             
             if (_currentMovementInput.x != 0 && _currentMovementInput.y != 0) // Check for diagonal movement
