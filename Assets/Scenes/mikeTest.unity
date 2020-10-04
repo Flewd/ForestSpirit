@@ -1082,25 +1082,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 2064983779014369096, guid: d06bfbd4800022c46a6778e7cd70d722,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8361900187349272601, guid: d06bfbd4800022c46a6778e7cd70d722,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08349323
+      value: 0.08349322
       objectReference: {fileID: 0}
     - target: {fileID: 8361900187349272601, guid: d06bfbd4800022c46a6778e7cd70d722,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026777294
+      value: -0.02677729
       objectReference: {fileID: 0}
     - target: {fileID: 8361900187800684630, guid: d06bfbd4800022c46a6778e7cd70d722,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.08349323
+      value: 0.08349322
       objectReference: {fileID: 0}
     - target: {fileID: 8361900187800684630, guid: d06bfbd4800022c46a6778e7cd70d722,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.026777294
+      value: -0.02677729
       objectReference: {fileID: 0}
     - target: {fileID: 8361900187800684631, guid: d06bfbd4800022c46a6778e7cd70d722,
         type: 3}
