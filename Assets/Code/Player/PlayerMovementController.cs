@@ -19,6 +19,8 @@ public class PlayerMovementController : MonoBehaviour
     
     void Start()
     {
+        PlayerCheckpoint.LastRegisteredCheckpointPosition = transform.position;
+
         _rigidbody = GetComponent<Rigidbody>();
         _camTransform = Camera.main.transform;
     }
