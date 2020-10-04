@@ -54,7 +54,7 @@ public class PlayerJumpController : MonoBehaviour
             return false;
         }
         
-        return Physics.Raycast(transform.position, Vector3.down, distToGround + 1.75f);
+        return Physics.Raycast(transform.position, Vector3.down, distToGround + 1.25f);
     }
     
     // Called from unity input system
