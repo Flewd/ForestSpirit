@@ -1,7 +1,7 @@
 ﻿using DG.Tweening;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour, InteractableSwitchReceiver
 {
     [SerializeField] private Rigidbody _platformRigidBody;
     [SerializeField] private Transform _targetPosition;
@@ -10,8 +10,23 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private float _duration = 1;
     [SerializeField] private Ease _easeType = Ease.Linear;
 
-    // Start is called before the first frame update
+    [SerializeField] private bool _controlledByButton = false;
+
+    [Header("Only applies if controlled by button")]
+    [SerializeField] private bool _startInMotion = false;
+
     void Start()
+    {
+        StartMotion();
+
+        if (_controlledByButton && _startInMotion == false)
+        {
+            _platformRigidBody.DOTogglePause();
+            return;
+        }
+    }
+
+    private void StartMotion()
     {
         int loopCount = (_loop ? -1 : 0);
 
@@ -20,5 +35,15 @@ public class MovingPlatform : MonoBehaviour
             .SetEase(_easeType);
 
         _platformRigidBody.DOMove(_targetPosition.position, _duration).SetAs(tweenParams);
+    }
+
+    public void SwitchFlipped()
+    {
+        _platformRigidBody.DOTogglePause();
+    }
+
+    public bool CanReceiverBePlayedAgain()
+    {
+        return true;
     }
 }
