@@ -5,6 +5,7 @@ using UnityEngine;
 public interface InteractableSwitchReceiver
 {
     void SwitchFlipped();
+    bool CanReceiverBePlayedAgain();
 }
 
 public class InteractableSwitch : MonoBehaviour
@@ -29,7 +30,10 @@ public class InteractableSwitch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _buttonPromptIndicator.SetActive(true);
+            if (receiver.CanReceiverBePlayedAgain())
+            {
+                _buttonPromptIndicator.SetActive(true);
+            }
         }
     }
 
@@ -52,6 +56,11 @@ public class InteractableSwitch : MonoBehaviour
         if (_buttonPromptIndicator.activeSelf)
         {
             SwitchPressed();
+
+            if (receiver.CanReceiverBePlayedAgain() == false)
+            {
+                _buttonPromptIndicator.SetActive(false);
+            }
         }
     }
 }

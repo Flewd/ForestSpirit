@@ -37,8 +37,13 @@ public class MovingPlatform : MonoBehaviour, InteractableSwitchReceiver
         _platformRigidBody.DOMove(_targetPosition.position, _duration).SetAs(tweenParams);
     }
 
-    void InteractableSwitchReceiver.SwitchFlipped()
+    public void SwitchFlipped()
     {
         _platformRigidBody.DOTogglePause();
+    }
+
+    public bool CanReceiverBePlayedAgain()
+    {
+        return true;
     }
 }
