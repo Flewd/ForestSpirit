@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5312385852927338362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5005763187685203676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80239b474a3ccba40a6e7e4c9460536b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5312385852063676687
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +127,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.83
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +180,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -983,20 +995,29 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 2
-          outSlope: 2
+          inSlope: 2.880159
+          outSlope: 2.880159
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.18990968
         - serializedVersion: 3
-          time: 1
+          time: 0.49624026
           value: 1
           inSlope: 0
           outSlope: 0
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.21812014
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -3.4107099
+          outSlope: -3.4107099
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.14400677
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -4846,18 +4867,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 44.46449, y: 9.861168, z: 23.550928}
   m_Center: {x: 20.38378, y: 4.430583, z: 7.618574}
---- !u!114 &5312385852927338362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5005763187685203676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80239b474a3ccba40a6e7e4c9460536b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5312385853007216228
 GameObject:
   m_ObjectHideFlags: 0
