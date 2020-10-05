@@ -179,6 +179,7 @@ MonoBehaviour:
   _spiritParticles: {fileID: 1898679252200207803}
   _particleAnimationDuration: 3
   _particleEaseType: 4
+  moveBeforeScalingOnDeath: 0
 --- !u!1 &259623258774026040
 GameObject:
   m_ObjectHideFlags: 0

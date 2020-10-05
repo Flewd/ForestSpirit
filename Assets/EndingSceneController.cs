@@ -14,7 +14,7 @@ public class EndingSceneController : MonoBehaviour
 
     [SerializeField] private Image _darkScreenCover;
 
-    [SerializeField] private TextMeshProUGUI _thanksText;
+    [SerializeField] private TextMeshProUGUI[] _creditsTexts;
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +67,56 @@ public class EndingSceneController : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+
         // turn on text
-        while (_thanksText.color.a < 1)
+        while (_creditsTexts[0].color.a < 1)
         {
-            Color newColor = _thanksText.color;
-            newColor.a += Time.deltaTime;
-            _thanksText.color = newColor;
+            for (int i = 0; i < _creditsTexts.Length; i++)
+            {
+                Color newColor = _creditsTexts[i].color;
+                newColor.a += Time.deltaTime;
+                _creditsTexts[i].color = newColor;
+
+            }
+
             yield return new WaitForEndOfFrame();
         }
-    }
+
+        // make sure all texts are fully opaque
+        for (int i = 0; i < _creditsTexts.Length; i++)
+        {
+            Color newColor = _creditsTexts[i].color;
+            newColor.a = 1;
+            _creditsTexts[i].color = newColor;
+        }
+
+        yield return new WaitForSeconds(5);
+
+
+        // turn off text
+        while (_creditsTexts[0].color.a > 0)
+        {
+            for (int i = 0; i < _creditsTexts.Length; i++)
+            {
+                Color newColor = _creditsTexts[i].color;
+                newColor.a -= Time.deltaTime;
+                _creditsTexts[i].color = newColor;
+
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        // make sure all texts are fully opaque
+        for (int i = 0; i < _creditsTexts.Length; i++)
+        {
+            Color newColor = _creditsTexts[i].color;
+            newColor.a = 0;
+            _creditsTexts[i].color = newColor;
+        }
+
+        yield return new WaitForSeconds(3);
+
+        Application.Quit();
+    }   
 }
