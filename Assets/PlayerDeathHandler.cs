@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerDeathHandler : MonoBehaviour
 {
     [SerializeField] GameObject _entirePlayerGameObject;
-    [SerializeField] SkinnedMeshRenderer _playerModel;
+    [SerializeField] GameObject _playerModel;
     [SerializeField] ParticleSystem _spiritParticles;
 
     [SerializeField] float _particleAnimationDuration = 3;
@@ -37,7 +37,15 @@ public class PlayerDeathHandler : MonoBehaviour
         _entirePlayerGameObject.transform.DOMove(playerSpawnPos, _particleAnimationDuration).SetAs(tweenParams).OnComplete(() => StartCoroutine(CleanupParticles()));
 
 
-        _playerModel.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.6f);
+
+        while (_playerModel.transform.localScale.x > 0)
+        {
+            _playerModel.transform.localScale -= Vector3.one * (Time.deltaTime * 6);
+            yield return new WaitForEndOfFrame();
+        }
+
+           _playerModel.gameObject.SetActive(false);
 
         yield return null;
 

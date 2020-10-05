@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationController: {fileID: 6166741551567963833}
-  _moveSpeed: 10
+  _moveSpeed: 12
 --- !u!114 &259623258731885737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entirePlayerGameObject: {fileID: 259623258731885730}
-  _playerModel: {fileID: 6896325687156838373}
+  _playerModel: {fileID: 3212022078526813886}
   _spiritParticles: {fileID: 1898679252200207803}
   _particleAnimationDuration: 3
   _particleEaseType: 4
@@ -5107,15 +5107,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4c3ce2a0e57da44dac7e620fa1d288c, type: 3}
---- !u!4 &2871244475810524164 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4c3ce2a0e57da44dac7e620fa1d288c,
+--- !u!1 &3212022078526813886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a4c3ce2a0e57da44dac7e620fa1d288c,
     type: 3}
   m_PrefabInstance: {fileID: 2328938105416993775}
   m_PrefabAsset: {fileID: 0}
---- !u!137 &6896325687156838373 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7134238992055286, guid: a4c3ce2a0e57da44dac7e620fa1d288c,
+--- !u!4 &2871244475810524164 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a4c3ce2a0e57da44dac7e620fa1d288c,
     type: 3}
   m_PrefabInstance: {fileID: 2328938105416993775}
   m_PrefabAsset: {fileID: 0}

@@ -17,9 +17,19 @@ public class NpcParticleAnimationTrigger : MonoBehaviour
     {
         if (animationStarted == false && other.tag == "Player")
         {
-            animationStarted = true;
-            StartCoroutine(PlaySpiritAnimation());
+            PlayParticleAnimation();
         }
+    }
+
+    public void PlayParticleAnimation(Transform overridePosition = null)
+    {
+        if(overridePosition != null)
+        {
+            _targetParticlePosition = overridePosition;
+        }
+
+        animationStarted = true;
+        StartCoroutine(PlaySpiritAnimation());
     }
 
     private IEnumerator PlaySpiritAnimation()
