@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 public class BuildTool
 {
-    private static string _GAME_NAME = "SpellBlast";
+    private static string _GAME_NAME = "Iku";
 
     [MenuItem("Build/Build All Platforms")]
     public static void BuildGame()
@@ -27,7 +27,7 @@ public class BuildTool
             buildMac();
 
             UnityEngine.Debug.Log("switch to linux platform");
-            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinuxUniversal);
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64);
             UnityEngine.Debug.Log("switch to linux platform complete");
 
             buildLinux();
@@ -37,7 +37,7 @@ public class BuildTool
             buildMac();
 
             UnityEngine.Debug.Log("switch to linux platform");
-            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinuxUniversal);
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64);
             UnityEngine.Debug.Log("switch to linux platform complete");
 
             buildLinux();
@@ -97,10 +97,10 @@ public class BuildTool
     [MenuItem("Build/Build Linux")]
     public static void BuildLinux()
     {
-        if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.StandaloneLinuxUniversal)
+        if (EditorUserBuildSettings.activeBuildTarget != BuildTarget.StandaloneLinux64)
         {
             UnityEngine.Debug.Log("switch to linux platform");
-            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinuxUniversal);
+            EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Standalone, BuildTarget.StandaloneLinux64);
             UnityEngine.Debug.Log("switch to linux platform complete");
         }
         buildLinux();
@@ -172,7 +172,7 @@ public class BuildTool
         BuildPipeline.BuildPlayer(
             GetAllScenes(),
             "builds/linux/" + _GAME_NAME + "." + dateStamp + "/" + _GAME_NAME + ".x86_64",
-            BuildTarget.StandaloneLinuxUniversal,
+            BuildTarget.StandaloneLinux64,
             BuildOptions.None);
 
         UnityEngine.Debug.Log("build linux complete");
