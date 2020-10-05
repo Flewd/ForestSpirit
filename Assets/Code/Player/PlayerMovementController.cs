@@ -19,10 +19,9 @@ public class PlayerMovementController : MonoBehaviour
 
     private bool firstMove = true;
 
-    void Start()
+    private void Awake()
     {
         PlayerCheckpoint.LastRegisteredCheckpointPosition = transform.position;
-
         _rigidbody = GetComponent<Rigidbody>();
         _camTransform = Camera.main.transform;
     }

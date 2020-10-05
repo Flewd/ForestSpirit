@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationController: {fileID: 6166741551567963833}
-  _moveSpeed: 10
+  _moveSpeed: 12
 --- !u!114 &259623258731885737
 MonoBehaviour:
   m_ObjectHideFlags: 0
