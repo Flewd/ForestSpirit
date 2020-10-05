@@ -375,6 +375,11 @@ PrefabInstance:
       propertyPath: _particleAnimationDuration
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7867315180670463261, guid: 023ed84027563ea41803798053e6adb5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 259623258731885732, guid: 023ed84027563ea41803798053e6adb5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 023ed84027563ea41803798053e6adb5, type: 3}
@@ -4079,12 +4084,12 @@ PrefabInstance:
     - target: {fileID: 1329684323296850498, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.12932117
+      value: -0.12932119
       objectReference: {fileID: 0}
     - target: {fileID: 1329684323296850498, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.029984955
+      value: 0.029984964
       objectReference: {fileID: 0}
     - target: {fileID: 1329684323296850499, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
@@ -4099,12 +4104,12 @@ PrefabInstance:
     - target: {fileID: 1329684323784962573, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.12932117
+      value: -0.12932119
       objectReference: {fileID: 0}
     - target: {fileID: 1329684323784962573, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.029984955
+      value: 0.029984964
       objectReference: {fileID: 0}
     - target: {fileID: 2281485550929365008, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
@@ -4161,10 +4166,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3132201468748316502, guid: b83d0285d273b8a4f989c2d16e3e14a1,
+        type: 3}
+      propertyPath: blackCover
+      value: 
+      objectReference: {fileID: 878172886}
     - target: {fileID: 8849811846165308764, guid: b83d0285d273b8a4f989c2d16e3e14a1,
         type: 3}
       propertyPath: m_Name
       value: CameraSystemEnding
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3132201468748316502, guid: b83d0285d273b8a4f989c2d16e3e14a1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b83d0285d273b8a4f989c2d16e3e14a1, type: 3}

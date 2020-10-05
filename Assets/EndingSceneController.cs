@@ -27,6 +27,20 @@ public class EndingSceneController : MonoBehaviour
 
     public IEnumerator PlayAllSpiritAnimations()
     {
+        Color color = _darkScreenCover.color;
+        color.a = 1;
+        _darkScreenCover.color = color;
+
+        // turn off screen cover
+        while (_darkScreenCover.color.a > 0)
+        {
+            Color newColor = _darkScreenCover.color;
+            newColor.a -= Time.deltaTime;
+            _darkScreenCover.color = newColor;
+
+            yield return new WaitForEndOfFrame();
+        }
+
         yield return new WaitForSeconds(2);
 
         for (int i = 0; i < NpcAnimations.Length; i++)
