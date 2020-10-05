@@ -14,6 +14,8 @@ public class PlayerDeathHandler : MonoBehaviour
 
     bool animationStarted = false;
 
+    [SerializeField] private bool moveBeforeScalingOnDeath = false;
+
     public void TransitionPlayerBackToCheckpoint()
     {
         if (animationStarted == false)
@@ -37,7 +39,10 @@ public class PlayerDeathHandler : MonoBehaviour
         _entirePlayerGameObject.transform.DOMove(playerSpawnPos, _particleAnimationDuration).SetAs(tweenParams).OnComplete(() => StartCoroutine(CleanupParticles()));
 
 
-        yield return new WaitForSeconds(0.6f);
+        if (moveBeforeScalingOnDeath)
+        {
+            yield return new WaitForSeconds(0.6f);
+        }
 
         while (_playerModel.transform.localScale.x > 0)
         {
@@ -68,7 +73,17 @@ public class PlayerDeathHandler : MonoBehaviour
     private IEnumerator CleanupParticles()
     {
         animationStarted = false;
+
+        _playerModel.transform.localScale = Vector3.zero;
         _playerModel.gameObject.SetActive(true);
+
+        while (_playerModel.transform.localScale.x < 1)
+        {
+            _playerModel.transform.localScale += Vector3.one * (Time.deltaTime * 6);
+            yield return new WaitForEndOfFrame();
+        }
+
+        _playerModel.transform.localScale = Vector3.one;
 
         //Material mat = _playerModel.material;
 

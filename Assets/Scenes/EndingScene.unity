@@ -375,6 +375,11 @@ PrefabInstance:
       propertyPath: _particleAnimationDuration
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3073333189560977293, guid: 023ed84027563ea41803798053e6adb5,
+        type: 3}
+      propertyPath: moveBeforeScalingOnDeath
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7867315180670463261, guid: 023ed84027563ea41803798053e6adb5,
         type: 3}
       propertyPath: m_IsActive
