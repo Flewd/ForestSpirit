@@ -49,9 +49,9 @@ public class TitleUiController : MonoBehaviour
 
     private IEnumerator PlayFadeOutSequence()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(4);
         StartCoroutine(FadeOutTextMesh(titleTextMesh));
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         StartCoroutine(FadeOutTextMesh(controlsTextMesh));
     }
 
