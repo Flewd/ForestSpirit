@@ -15,6 +15,7 @@ public class EndingSceneController : MonoBehaviour
     [SerializeField] private Image _darkScreenCover;
 
     [SerializeField] private TextMeshProUGUI[] _creditsTexts;
+    [SerializeField] private TextMeshProUGUI[] _creditsTexts2;
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +91,7 @@ public class EndingSceneController : MonoBehaviour
             _creditsTexts[i].color = newColor;
         }
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
 
 
         // turn off text
@@ -115,7 +116,58 @@ public class EndingSceneController : MonoBehaviour
             _creditsTexts[i].color = newColor;
         }
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
+
+
+        // turn on text
+        while (_creditsTexts2[0].color.a < 1)
+        {
+            for (int i = 0; i < _creditsTexts2.Length; i++)
+            {
+                Color newColor = _creditsTexts2[i].color;
+                newColor.a += Time.deltaTime;
+                _creditsTexts2[i].color = newColor;
+
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        // make sure all texts are fully opaque
+        for (int i = 0; i < _creditsTexts2.Length; i++)
+        {
+            Color newColor = _creditsTexts2[i].color;
+            newColor.a = 1;
+            _creditsTexts2[i].color = newColor;
+        }
+
+        yield return new WaitForSeconds(4);
+
+
+        // turn off text
+        while (_creditsTexts2[0].color.a > 0)
+        {
+            for (int i = 0; i < _creditsTexts2.Length; i++)
+            {
+                Color newColor = _creditsTexts2[i].color;
+                newColor.a -= Time.deltaTime;
+                _creditsTexts2[i].color = newColor;
+
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        // make sure all texts are fully opaque
+        for (int i = 0; i < _creditsTexts2.Length; i++)
+        {
+            Color newColor = _creditsTexts2[i].color;
+            newColor.a = 0;
+            _creditsTexts2[i].color = newColor;
+        }
+
+        yield return new WaitForSeconds(1);
+
 
         Application.Quit();
     }   
